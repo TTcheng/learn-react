@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import * as actions from './redux/actions'
+import * as PropTypes from "prop-types";
 
-class CounterApp extends Component {
+export default class Counter extends Component {
+    static propTypes = {
+        count: PropTypes.number.isRequired,
+        increment: PropTypes.func.isRequired,
+        decrement: PropTypes.func.isRequired,
+    };
+
     render() {
-        const {store} = this.props;
         return (
             <div className="container">
-                <p className="card-text">Current value is {store.getState()}</p>
+                <p className="card-text">Current value is {this.props.count}</p>
                 <div className="mt-2 form-group">
                     <select id={"select"} className="form-control" ref={(select) => this.select = select}>
                         <option value={1}>1</option>
@@ -28,30 +33,26 @@ class CounterApp extends Component {
 
     increase = () => {
         const selected = this.select.value * 1;
-        this.props.store.dispatch(actions.increment(selected))
+        this.props.increment(selected)
     };
 
     decrease = () => {
         const selected = this.select.value * 1;
-        this.props.store.dispatch(actions.decrement(selected))
+        this.props.decrement(selected)
     };
 
     increaseIfOdd = () => {
-        const {store} = this.props;
-        const currentCount = store.getState();
+        const currentCount = this.props.count;
         if (currentCount & 1) {
             const selected = this.select.value * 1;
-            store.dispatch(actions.increment(selected))
+            this.props.increment(selected)
         }
     };
 
     increaseAsync = () => {
         setTimeout(() => {
-            const {store} = this.props;
             const selected = this.select.value * 1;
-            store.dispatch(actions.increment(selected))
+            this.props.increment(selected)
         }, 1000);
     }
 }
-
-export default CounterApp;
