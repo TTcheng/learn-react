@@ -1,0 +1,11 @@
+.del-btn {
+    color: blue;
+    float: right;
+    height: fit-content;
+    width: fit-content;
+    font-size: 10px;
+}
+
+.item-box {
+    border: solid thin lightgray;
+}
