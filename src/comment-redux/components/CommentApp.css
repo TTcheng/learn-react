@@ -1,0 +1,19 @@
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.content {
+
+}
+
+.title-box {
+    display: flex;
+    align-items:Center;
+    height: 150px;
+    background: lightgray;
+}
+
+.title {
+    text-align: left;
+}
