@@ -4,5 +4,5 @@ import Counter from '../components/Counter'
 
 export default connect(
     (state) => ({count: state}),
-    {increment: actions.increment, decrement: actions.decrement}
+    {increment: actions.increment, decrement: actions.decrement, incrementAsync: actions.incrementAsync}
 )(Counter)

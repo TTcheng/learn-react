@@ -8,6 +8,7 @@ export default class Counter extends Component {
         count: PropTypes.number.isRequired,
         increment: PropTypes.func.isRequired,
         decrement: PropTypes.func.isRequired,
+        incrementAsync: PropTypes.func.isRequired,
     };
 
     render() {
@@ -50,9 +51,7 @@ export default class Counter extends Component {
     };
 
     increaseAsync = () => {
-        setTimeout(() => {
-            const selected = this.select.value * 1;
-            this.props.increment(selected)
-        }, 1000);
+        const selected = this.select.value * 1;
+        this.props.incrementAsync(selected)
     }
 }
