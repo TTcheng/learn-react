@@ -8,9 +8,11 @@ class CommentList extends Component {
         return (
             <div className={"container col-sm-8 comment-box"}>
                 <h2>评论回复：</h2>
-                {this.props.comments.map((comment, index) =>
-                    <CommentItem index={index} key={index} who={comment.name} comment={comment.content}
-                                 delComment={this.props.delComment}/>)}
+                <div className="list-group">
+                    {this.props.comments.map((comment, index) =>
+                        <CommentItem index={index} key={index} who={comment.name} comment={comment.content}
+                                     delComment={this.props.delComment}/>)}
+                </div>
             </div>
         );
     }

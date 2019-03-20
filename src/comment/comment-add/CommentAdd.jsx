@@ -27,14 +27,14 @@ class CommentAdd extends Component {
 
     render() {
         return (
-            <div className="col-sm-4 submit-box">
-                <span>用户名</span><br/>
-                <input className={"input-name"} value={this.state.username}
+            <div className="col-sm-4 submit-box form-group">
+                <label htmlFor={"username"}>用户名</label><br/>
+                <input id={"username"} className={"input-name form-control"} value={this.state.username}
                        onChange={this.handleUsernameChange}/><br/>
-                <span>评论内容</span><br/>
-                <textarea className={"input-area"} value={this.state.content}
+                <label htmlFor={"comment"}>评论内容</label><br/>
+                <textarea id={"comment"} className={"input-area form-control"} value={this.state.content}
                           onChange={this.handleContentChange}/><br/>
-                <button className={"submit-btn"} onClick={this.handleSubmit}>提交</button>
+                <button className={"submit-btn form-control"} onClick={this.handleSubmit}>提交</button>
             </div>
         );
     }

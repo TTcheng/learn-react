@@ -10,7 +10,7 @@ class CommentItem extends Component {
 
     render() {
         return (
-            <div className="item-box">
+            <div className="item-box list-group-item">
                 <button className={"del-btn"} onClick={this.handleDelete}>删除</button>
                 <h4>{this.props.who}说：</h4>
                 <p>
